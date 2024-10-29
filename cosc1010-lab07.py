@@ -1,8 +1,8 @@
-# Your Name Here
+# Jacquelyn Hall
 # UWYO COSC 1010
-# Submission Date
+# Submission Date 10/29/2024
 # Lab XX
-# Lab Section: 
+# Lab Section: 15
 # Sources, people worked with, help given to: 
 # your
 # comments
