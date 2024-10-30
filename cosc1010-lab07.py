@@ -51,6 +51,20 @@ print("*"*75)
 
 num_sum = 0 
 
+while True:
+    uin = input("Please enter an interger or enter 'exit' to leave")
+    if uin.lower() == "exit":
+        break
+    elif uin[0] == '-' and uin[1:].isdigit():
+        num = int(uin)
+        num_sum += num
+    elif uin.isdigit():
+        num = int(uin)
+        num_sum += num
+    else:
+        print("Error, please enter an integer or enter 'exit:'")
+        
+
 print(f"Your final sum is {num_sum}")
 
 print("*"*75)
@@ -70,5 +84,42 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
+def calculator():
+    while True:
+        up = input("Please input a valid positive integer equation using: +, -, /, *, % (or type 'exit' to leave): ").strip()
+        if up.lower() == "exit":
+            break
 
-        
+        op = '+-/*%'
+        op_pres = None
+
+        for char in up:
+            if char in op:
+                op_pres = char
+                break
+            elif char not in up:
+                print("Please enter a valid operator '+, -, /, *, %': ")
+                continue
+
+        oper = up.replace(" ", "").split(op_pres)
+
+        oper1 = int(oper[0])
+        oper2 = int(oper[1])
+
+        if op_pres == "+":
+            ans = oper1 + oper2
+        elif op_pres == "-":
+            ans = oper1 - oper2
+        elif op_pres == "/":
+            if oper2 == 0:
+                print("Cannot divide by 0, please try again with a valid equation")
+                continue
+            ans = oper1 / oper2
+        elif op_pres == "*":
+            ans = oper1 * oper2
+        elif op_pres == "%":
+            ans = oper1 % oper2
+
+        print(f"{up} = {ans}")
+
+calculator()
