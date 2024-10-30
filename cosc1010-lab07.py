@@ -19,6 +19,18 @@
 
 factorial = 1
 
+while True:
+    ub = input("Please type out positive number to retrieve the factorial")
+
+    if ub.isdigit() and int(ub) > 0:
+        ub = int(ub)
+        break
+    else:
+        print("Error, Please enter a positive number")
+
+for num in range(1, ub + 1):
+    factorial *= num
+
 print(f"The result of the factorial based on the given bound is {factorial}")
 
 print("*"*75)
